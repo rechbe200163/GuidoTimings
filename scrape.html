@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Scraping Beispiel</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      // Hier kommt der Scraping-Code
+
+      // Beispiel mit jQuery für das Extrahieren von h1-Tags
+      $(document).ready(function () {
+        $.get("https://www.wagenradlbar.at", function (data) {
+          const headings = $(data).find("h1");
+          headings.each(function (index, element) {
+            console.log($(element).text());
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
